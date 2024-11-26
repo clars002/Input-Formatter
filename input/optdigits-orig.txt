@@ -1,24 +1,3 @@
-BU handwritten digit database: E Alpaydin C Kaynak 1995
-Writer-independent test file
-
-entwidth = 32
-entheight = 32
-depth = 1
-density = 300
-whitepix = 0
-ntot = 1797
-ndigit = 1797
-nlower = 0
-nupper = 0
-nparag = 0
-firstdigit = 0
-lastdigit = 0
-firstlower = 0
-lastlower = 0
-firstupper = 0
-lastupper = 0
-firstparag = 0
-lastparag = 0
 00000000000011000000000000000000
 00000000000111101000000000000000
 00000000001111111111000000000000
