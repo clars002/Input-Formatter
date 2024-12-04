@@ -8,7 +8,7 @@ def parse_arguments():
         "--input",
         type=str,
         default="input/optdigits-orig.txt",
-        help="Input file to be formatted."
+        help="Input file to be formatted.",
     )
 
     return parser.parse_args()
@@ -17,27 +17,30 @@ def parse_arguments():
 def main():
     args = parse_arguments()
 
-    predictions = open("output/predictions.txt", "w")
-    observations = open("output/observations.txt", "w")
+    inp = open("output/predictors.txt", "w")
+    lab = open("output/responses.txt", "w")
 
     with open(args.input) as input_file:
         text = input_file.readlines()
         for line in text:
             line = line.rstrip()
-            if line[0] == ' ':
-                observations.write(line[1] + '\n')
-                predictions.write('\n')
+            if line[0] == " ":
+                rep = [None] * 10
+                num = line[1]
+                num_int = int(line[1])
+                rep[num_int] = "1"
+                for char in rep:
+                    if char == None:
+                        char = "0"
+                    lab.write(char + " ")
+                lab.write("\n")
+                inp.write("\n")
             else:
                 for i in range(len(line)):
-                    predictions.write(line[i] + ' ')
+                    inp.write(line[i] + " ")
 
-    predictions.close()
-    observations.close()
-
-
-# def process_line(str):
-#     if line[0] == ' ':
-        
+    inp.close()
+    lab.close()
 
 
 if __name__ == "__main__":
